@@ -1,1 +1,78 @@
+public class Animal {
+
+    private String size;
+    private String type;
+    private boolean nightvision;
+
+    public Animal(String size, String type, boolean nightvision) {
+        this.size = size;
+        this.type = type;
+        this.nightvision = nightvision;
+    }
+
+    public void eat() {
+        System.out.println("The animal is eating.");
+    }
+
+    public void sleepAtNight() {
+        if (nightvision) {
+            System.out.println("The animal is sleeping soundly, using its night vision.");
+        } else {
+            System.out.println("The animal is sleeping soundly.");
+        }
+    }
+
+    public void bite() {
+        System.out.println("The animal is biting.");
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public boolean hasNightvision() {
+        return nightvision;
+    }
+
+    public String toString() {
+        return "Animal{" +
+                "size='" + size + '\'' +
+                ", type='" + type + '\'' +
+                ", nightvision=" + nightvision +
+                '}';
+    }
+}
+
+class TestAnimal {
+
+    public static void main(String[] args) {
+
+        Animal lion = new Animal("large", "mammal", true);
+        Animal owl = new Animal("small", "bird", true);
+        Animal snake = new Animal("medium", "reptile", false);
+
+        System.out.println("Lion:");
+        System.out.println(lion);
+        lion.eat();
+        lion.sleepAtNight();
+        lion.bite();
+
+        System.out.println("\nOwl:");
+        System.out.println(owl);
+        owl.eat();
+        owl.sleepAtNight();
+        owl.bite();
+
+        System.out.println("\nSnake:");
+        System.out.println(snake);
+        snake.eat();
+        snake.sleepAtNight();
+        snake.bite();
+    }
+}
+
 
